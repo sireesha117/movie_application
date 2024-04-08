@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-title class="login">Register</mat-card-title>
+  <mat-card-content class="login">
+    <p>
+      <mat-form-field class="login">
+        <label>Username</label>
+        <input
+          type="text"
+          [(ngModel)]="registerObj.username"
+          placeholder="Username"
+          required
+        />
+        <p></p>
+        <label>Password</label>
+        <input
+          type="text"
+          [(ngModel)]="registerObj.password"
+          placeholder="password"
+          required
+        />
+
+        <label>Email</label>
+        <input
+          type="text"
+          [(ngModel)]="registerObj.email"
+          placeholder="Email"
+          required
+        />
+
+        <label>PetName</label>
+        <input
+          type="text"
+          [(ngModel)]="registerObj.petname"
+          placeholder="PetName"
+          required
+        />
+      </mat-form-field>
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="login">
+    <button (click)="register()" mat-stroked-button color="primary">
+      Register
+    </button>
+  </mat-card-actions>
+  <mat-card-actions class="login">
+    <button (click)="blogin()" mat-stroked-button color="primary">
+      Back to Login
+    </button>
+  </mat-card-actions>
+</mat-card>

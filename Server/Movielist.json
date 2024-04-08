@@ -1,0 +1,28 @@
+{
+  "movielist": [
+    {
+      "movieId": "1",
+      "movieName": "Virupaksha",
+      "seats": 100,
+      "Avaliableseats": 100
+    },
+    {
+      "movieId": "2",
+      "movieName": "Agent",
+      "seats": 100,
+      "Avaliableseats": 100
+    },
+    {
+      "movieId": "3",
+      "movieName": "Fast X",
+      "seats": 100,
+      "Avaliableseats": 90
+    },
+    {
+      "movieId": "4",
+      "movieName": "Fast X",
+      "seats": 100,
+      "Avaliableseats": 90
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<mat-card class="card">
+  <mat-card-title class="login">Login</mat-card-title>
+  <mat-card-content class="login">
+    <mat-form-field class="login">
+      <label>Username</label>
+      <input
+        type="text"
+        [(ngModel)]="loginObj.username"
+        placeholder="Username"
+      />
+      <label>Password</label>
+      <input
+        type="text"
+        [(ngModel)]="loginObj.password"
+        placeholder="password"
+      />
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions class="login">
+    <mat-form-field>
+      <label>Selct Role</label>
+      <mat-label>Selcted Role</mat-label>
+      <select [(ngModel)]="loginObj.userRole" matNativeControl required>
+        <option value="admin">Admin</option>
+        <option value="customer">Customer</option>
+      </select>
+    </mat-form-field>
+    <p></p>
+    <button (click)="login()" mat-raised-button color="primary">Sign in</button>
+    <button (click)="forgotpassword()" mat-raised-button color="primary">
+      Forgot Password
+    </button>
+  </mat-card-actions>
+  <p class="login">Register here</p>
+  <mat-action-row class="login">
+    <button (click)="Register()" mat-raised-button color="warn">Sign up</button>
+  </mat-action-row>
+</mat-card>
