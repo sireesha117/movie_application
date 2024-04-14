@@ -28,7 +28,10 @@ export class TicketComponent implements OnInit {
   }
   bookticket() {
     this.ticketObj.movie_id_fk = this.id;
+    this.ticketObj.user_name_fk=localStorage.getItem("username");
+  
     this.ticketObj.no_of_tickets = this.seats;
+    console.log(this.ticketObj);
     this.ticketservice.bookTicket(this.ticketObj).subscribe((data) => {
       this.data = JSON.stringify(data);
       this.ticketarr.push(this.data);

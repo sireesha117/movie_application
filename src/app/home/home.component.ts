@@ -4,16 +4,20 @@ import { MovieService } from './movie.service';
 import { movie } from './movie';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+
   constructor(
     private aroute: ActivatedRoute,
     private movieservice: MovieService,
-    private route: Router
+    private route: Router,
+    
   ) {}
   isAdmin: boolean | any;
   ngOnInit(): void {
@@ -57,6 +61,7 @@ export class HomeComponent implements OnInit {
 
   addNewMovie() {
     debugger;
+  
     this.movieservice.addMovie(this.movieObj).subscribe(
       (data) => {
         debugger;

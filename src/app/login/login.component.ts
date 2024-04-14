@@ -20,6 +20,8 @@ export class LoginComponent {
         alert('invalid Credentails');
       } else {
         localStorage.setItem('Token', data['Token']);
+        localStorage.setItem('username', data['username']);
+
         this.route.navigate([`home`]);
       }
       localStorage.setItem('role', data.userRole);

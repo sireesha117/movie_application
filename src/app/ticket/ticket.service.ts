@@ -9,10 +9,9 @@ import { movie } from '../home/movie';
 })
 export class TicketService {
   constructor(private http: HttpClient) {}
-  // private apipost =
-  //   'https://nbbdma5yzb.execute-api.us-west-2.amazonaws.com/SecondStage';
+  
   private apipost = 'http://localhost:8080/api/v1/ticket/add';
-  //private apiget = `https://nbbdma5yzb.execute-api.us-west-2.amazonaws.com/SecondStage`;
+ 
   private apiget = 'http://localhost:8080/api/v1/findmovie';
 
   bookTicket(ticket: ticket): Observable<ticket> {

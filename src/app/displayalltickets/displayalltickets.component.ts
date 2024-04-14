@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { DisplayticketsService } from './displaytickets.service';
@@ -10,9 +11,19 @@ import { displayticket } from './displyticket';
 })
 export class DisplayallticketsComponent {
   constructor(private displayticket: DisplayticketsService) {}
+  isAdmin: boolean | any;
+  ngOnInit(): void {
+    const role = localStorage.getItem('role');
+    if (role === 'admin') {
+      this.isAdmin = true;
+    } else if (role === 'customer') {
+      this.isAdmin = false;
+    }
+  }
   displayedColumns: string[] = [
     'transactionId',
     'movie_id_fk',
+    'user_name_fk',
     'no_of_tickets',
     'issueAt',
     'showTime',
@@ -24,18 +35,44 @@ export class DisplayallticketsComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  displayticketarr: Array<displayticket> = [];
-  public dataSource: [] | any;
-  getAllMovieTickets() {
-    this.displayticket.getallmovietickets().subscribe(
+  displayticketarradmin: Array<displayticket> = [];
+  public dataSourceadmin: [] | any;
+  getAllMovieTicketsadmin() {
+    this.displayticket.getallmovieticketsadmin().subscribe(
       (data) => {
-        this.displayticketarr = Object.values(data);
-        this.dataSource = new MatTableDataSource(this.displayticketarr);
-        console.log(this.dataSource);
+        this.displayticketarradmin = Object.values(data);
+        this.dataSourceadmin = new MatTableDataSource(this.displayticketarradmin);
+        console.log(this.dataSourceadmin);
       },
       (error) => {
         console.log(error);
       }
     );
   }
+
+
+
+
+  displayticketarr: Array<displayticket> = [];
+  public dataSource: [] | any;
+  getAllMovieTickets() {
+    let username = localStorage.getItem('username'); // Get username from local storage
+
+    if (username) { // Check if username is not null
+        this.displayticket.getallmovietickets(username).subscribe( // Send username as path variable
+            (data) => {
+                this.displayticketarr = Object.values(data);
+                this.dataSource = new MatTableDataSource(this.displayticketarr);
+                console.log(this.dataSource);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    } else {
+        console.log('Username not found in local storage');
+    }
+}
+
+
 }
