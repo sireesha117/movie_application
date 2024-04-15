@@ -28,6 +28,7 @@ describe('DisplayticketsService', () => {
       {
         transactionId: 1,
         movie_id_fk: 1,
+        user_name_fk:'user1',
         no_of_tickets: 10,
         issueAt: '29/10/2023',
         showTime:'09:30AM',
@@ -36,6 +37,7 @@ describe('DisplayticketsService', () => {
       {
         transactionId: 2,
         movie_id_fk: 2,
+        user_name_fk:'user2',
         no_of_tickets: 5,
         issueAt: '29/10/2023',
         showTime:'09:30AM',
@@ -43,7 +45,7 @@ describe('DisplayticketsService', () => {
       },
     ];
 
-    service.getallmovietickets().subscribe((tickets) => {
+    service.getallmovieticketsadmin().subscribe((tickets) => {
       expect(tickets).toEqual(expectedTickets);
     });
 
