@@ -1,39 +1,40 @@
-<mat-card class="card">
-  <mat-card-title class="login">Login</mat-card-title>
-  <mat-card-content class="login">
-    <mat-form-field class="login">
-      <label>Username</label>
-      <input
-        type="text"
-        [(ngModel)]="loginObj.username"
-        placeholder="Username"
-      />
-      <label>Password</label>
-      <input
-        type="password"
-        [(ngModel)]="loginObj.password"
-        placeholder="password"
-      />
-    </mat-form-field>
-  </mat-card-content>
+<div class="container">
+  <div class="desktopViewBoard">
+    <h1 class="desktopViewBoardHeading">Movie<br><br>Booking</h1>
+  </div>
+  <div class="loginContainerMain">
+    <div class="signInContainer">
+      <h1 class="signInHeading">Sign In</h1>
+      <p class="signInPara">Sign in to your account</p>
+    
+      <form class="loginFormContainer" >
+        <div style="margin: auto; width: 85%;">
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="username">Username</label>
+            <input type="text" [(ngModel)]="loginObj.username" id="username" name="username" class="loginFormInput"/>
+          </div>
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="password">Password</label>
+            <input type="password" [(ngModel)]="loginObj.password" id="password" name="password" class="loginFormInput"/>
+          
+          </div>
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="userRole">Select Role</label>
+            <select [(ngModel)]="loginObj.userRole" id="userRole" name="userRole" class="loginFormInput">
+              <option value="admin">Admin</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+          
+          <p class="forgotPassword" (click)="forgotpassword()">Forgot password?</p>
+          <button type="submit" class="signInBtn" (click)="login()">Sign In</button>
+         
+        </div>
+      </form> 
+      <p class="accountDesription">Don't have an account? <span style="color:#346BD4;" (click)="Register()">Register here</span></p>
+    </div>
+  </div>
+</div>
 
-  <mat-card-actions class="login">
-    <mat-form-field>
-      <label>Selct Role</label>
-      <mat-label>Selcted Role</mat-label>
-      <select [(ngModel)]="loginObj.userRole" matNativeControl required>
-        <option value="admin">Admin</option>
-        <option value="customer">Customer</option>
-      </select>
-    </mat-form-field>
-    <p></p>
-    <button (click)="login()" mat-raised-button color="primary">Sign in</button>
-    <button (click)="forgotpassword()" mat-raised-button color="primary">
-      Forgot Password
-    </button>
-  </mat-card-actions>
-  <p class="login">Register here</p>
-  <mat-action-row class="login">
-    <button (click)="Register()" mat-raised-button color="warn">Sign up</button>
-  </mat-action-row>
-</mat-card>
+
+

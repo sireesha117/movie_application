@@ -1,8 +1,158 @@
-.login {
+.container{
   display: flex;
-  justify-content: center;
 }
 
-.card {
-  background-color: antiquewhite;
+.desktopViewBoard{
+  background-color: #000000;
+  width:35vw;
+  height: 100vh;
+  max-width: 588px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.desktopViewBoardHeading{
+  font-family: "Roboto";
+  font-size: 50px;
+  color: #ffffff;
+}
+@media screen and (max-width:991px){
+  .desktopViewBoard{
+      display: none;
+  }
+  .desktopViewBoardHeading{
+      display: none;
+  }
+}
+.loginContainerMain{
+  background-color: #F5F5F5;
+  width: 65vw;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width:991px) {
+  .loginContainerMain{
+      width: 100vw;
+      height:100vh;
+  }
+  
+}
+.signInHeading{
+  font-size: 32px;
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+.signInPara{
+  font-size: 16px;
+  font-family: "Lato";
+  font-weight: 400;
+}
+@media screen and (max-width:576px) {
+  .signInHeading{
+      font-size: 22px;
+  }
+  .signInPara{
+      font-size: 12px;
+  }
+  
+}
+.loginContainers{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.loginContainer{
+  width: 180px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginContainerPara{
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+.loginFormContainer{
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 385px;
+  height: 317px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+@media screen and (max-width:400px){
+  .loginContainer{
+      width: 120px;
+      margin-right: 5px;
+      justify-content: space-between;
+  }
+  .loginContainerPara{
+      font-size: 10px;
+  }
+  .loginFormContainer{
+      width: 100%;
+  }
+}
+.inputFormContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.loginFormName{
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 16px;
+  align-self: flex-start;
+}
+.loginFormInput{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  outline: none;
+  font-size: 20px;
+  color: #000000;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.errorMsg{
+  color: red;
+  font-family: "Roboto";
+  font-size: 12px;
+  padding-top: 0;
+}
+.forgotPassword{
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  color:#346BD4;
+  margin-bottom: 20px;
+}
+.signInBtn{
+  width: 100%;
+  background-color: #000000;
+  border-radius: 10px;
+  color:#ffffff;
+  height: 40px;
+}
+.accountDesription{
+  color: #858585;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Lato";
+  margin-top: 5px;
 }

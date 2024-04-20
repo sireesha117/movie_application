@@ -1,50 +1,36 @@
-<mat-card>
-  <mat-card-title class="login">Register</mat-card-title>
-  <mat-card-content class="login">
-    <p>
-      <mat-form-field class="login">
-        <label>Username</label>
-        <input
-          type="text"
-          [(ngModel)]="registerObj.username"
-          placeholder="Username"
-          required
-        />
-        <p></p>
-        <label>Password</label>
-        <input
-          type="password"
-          [(ngModel)]="registerObj.password"
-          placeholder="password"
-          required
-        />
-
-        <label>Email</label>
-        <input
-          type="text"
-          [(ngModel)]="registerObj.email"
-          placeholder="Email"
-          required
-        />
-
-        <label>PetName</label>
-        <input
-          type="text"
-          [(ngModel)]="registerObj.petname"
-          placeholder="PetName"
-          required
-        />
-      </mat-form-field>
-    </p>
-  </mat-card-content>
-  <mat-card-actions class="login">
-    <button (click)="register()" mat-stroked-button color="primary">
-      Register
-    </button>
-  </mat-card-actions>
-  <mat-card-actions class="login">
-    <button (click)="blogin()" mat-stroked-button color="primary">
-      Back to Login
-    </button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <div class="desktopViewBoard">
+    <h1 class="desktopViewBoardHeading">Movie<br><br>Booking</h1>
+  </div>
+  <div class="loginContainerMain">
+    <div class="signInContainer">
+      <h1 class="signInHeading">Register</h1>
+      <p class="signInPara">Create your account</p>
+    
+      <form class="loginFormContainer" >
+        <div style="margin: auto; width: 85%;">
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="username">Username</label>
+            <input type="text" [(ngModel)]="registerObj.username" id="username" name="username" class="loginFormInput" required/>
+          </div>
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="password">Password</label>
+            <input type="password" [(ngModel)]="registerObj.password" id="password" name="password" class="loginFormInput" required/>
+          </div>
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="email">Email</label>
+            <input type="text" [(ngModel)]="registerObj.email" id="email" name="email" class="loginFormInput" required/>
+          </div>
+          <div class="inputFormContainer">
+            <label class="loginFormName" for="petname">Pet Name</label>
+            <input type="text" [(ngModel)]="registerObj.petname" id="petname" name="petname" class="loginFormInput" required/>
+          </div>
+          
+          <button type="submit" class="signInBtn" (click)="register()">Register</button>
+        </div>
+      </form> 
+      <br><br><br>
+      <p class="accountDesription">Already have an account? <span style="color:#346BD4;" (click)="blogin()">Back to Login</span></p>
+    </div>
+  </div>
+</div>
