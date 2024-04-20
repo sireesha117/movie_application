@@ -4,13 +4,13 @@
     <mat-form-field class="login">
       <label>Username</label>
       <input
-        type="text"
+        type="text" class="input-rounded"
         [(ngModel)]="loginObj.username"
         placeholder="Username"
       />
       <label>Password</label>
       <input
-        type="password"
+        type="password" class="input-rounded"
         [(ngModel)]="loginObj.password"
         placeholder="password"
       />
@@ -21,7 +21,7 @@
     <mat-form-field>
       <label>Selct Role</label>
       <mat-label>Selcted Role</mat-label>
-      <select [(ngModel)]="loginObj.userRole" matNativeControl required>
+      <select [(ngModel)]="loginObj.userRole" class="input-rounded" matNativeControl required>
         <option value="admin">Admin</option>
         <option value="customer">Customer</option>
       </select>

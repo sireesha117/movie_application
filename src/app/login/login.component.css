@@ -1,8 +1,16 @@
-.login {
+ .login {
   display: flex;
   justify-content: center;
+  align-items: center;
+  
 }
 
 .card {
   background-color: antiquewhite;
-}
+  height: 100%;
+} 
+.input-rounded {
+  border-radius: 10px; 
+  padding: 10px;
+  border-width: 0px;
+} 
