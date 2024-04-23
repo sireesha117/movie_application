@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   data: {} | any;
+  filterValue = '';
   public movieObj: movie = new movie();
   moviearr: Array<movie> = [];
   public dataSource: [] | any;
@@ -54,9 +55,22 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
+
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.filterValue = (event.target as HTMLInputElement).value;
+  }
+
+  get filteredData() {
+    if (this.dataSource) {
+      return this.dataSource.data.filter((element: any) =>
+        element.movieName.toLowerCase().includes(this.filterValue.toLowerCase())
+      );
+    }
+    return [];
   }
 
 

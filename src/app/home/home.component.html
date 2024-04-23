@@ -1,12 +1,6 @@
 <app-header></app-header>
 <mat-divider></mat-divider>
-
-
-
-<mat-form-field>
-  <mat-label>Movies</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Search movie" #input />
-</mat-form-field>
+<input [(ngModel)]="filterValue" placeholder="Search for a movie..." />
 
 <br />
 <button mat-raised-button color="primary" (click)="viewAllMovies()">
@@ -16,61 +10,17 @@
 <hr />
 <br />
 
-<div *ngIf="dataSource">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="movieId">
-      <th mat-header-cell *matHeaderCellDef>MovieId</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.movieId }}
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="movieName">
-      <th mat-header-cell *matHeaderCellDef>MovieName</th>
-      <td mat-cell *matCellDef="let element">
-        <a (click)="showmovie(element.movieId)">{{ element.movieName }}</a>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="seats">
-      <th mat-header-cell *matHeaderCellDef>Seats</th>
-      <td mat-cell *matCellDef="let element">{{ element.seats }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="seatsAvalible">
-      <th mat-header-cell *matHeaderCellDef>Avaliable seats</th>
-      <td mat-cell *matCellDef="let element">{{ element.seatsAvalible }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="theatreName">
-      <th mat-header-cell *matHeaderCellDef>Theater Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.theatreName }}</td>
-    </ng-container>
-    <ng-container matColumnDef="showTime">
-      <th mat-header-cell *matHeaderCellDef>Show Time</th>
-      <td mat-cell *matCellDef="let element">{{ element.showTime }}</td>
-    </ng-container>
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef>Price</th>
-      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <a (click)="deletemovie(element.movieId)" *ngIf="isAdmin"><button mat-raised-button
-            color="primary">Delete</button></a>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">
-        No data matching the filter "{{ input.value }}"
-      </td>
-    </tr>
-  </table>
+<div class="card-container" *ngIf="dataSource">
+  <div  *ngFor="let element of filteredData">
+    <div class="card">
+      <h2>Movie ID: {{element.movieId}}</h2>
+      <p (click)="showmovie(element.movieId)">{{ element.movieName }}</p>
+      <p>Seats: {{element.seats}}</p>
+      <p>Available Seats: {{element.seatsAvalible}}</p>
+      <p>Theater Name: {{element.theatreName}}</p>
+      <p>Show Time: {{element.showTime}}</p>
+      <p>Price: {{element.price}}</p>
+      <a (click)="deletemovie(element.movieId)" *ngIf="isAdmin"><button mat-raised-button class=".button"  color="primary">Delete</button></a>
+    </div>
+  </div>
 </div>

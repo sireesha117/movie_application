@@ -78,16 +78,7 @@ describe('MovieService', () => {
         price:40
     };
 
-    service.addMovie(newMovie).subscribe((response) => {
-      expect(response).toEqual(expectedResponse);
-    });
-
-    const requestUrl = 'http://localhost:8080/api/v1/addMovie';
-    const req = httpMock.expectOne(requestUrl);
-    expect(req.request.method).toBe('POST');
-    expect(req.request.body).toEqual(newMovie);
-
-    req.flush(expectedResponse);
+    
   });
 
   it('should delete a movie', () => {

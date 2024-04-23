@@ -1,4 +1,4 @@
-/* Structure */
+/* 
 table {
   width: 100%;
 }
@@ -6,4 +6,54 @@ table {
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
+} */
+
+
+.card-container {
+  display: flex !important;
+  flex-direction: row !important; /* Change this from column to row */
+  /* Add this line */
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+ 
+}
+
+.card {
+  background-color: #f3f3f3;
+  border-radius: 10px;
+ 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+
+
+.button:hover {
+  color: #212529;
+  background-color: #DC4C64;
+  border-color: #0062cc;
+}
+
+.button:focus, .button.focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+.button:disabled, .button.disabled {
+  opacity: .65;
 }
