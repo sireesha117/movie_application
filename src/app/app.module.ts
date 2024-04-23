@@ -27,6 +27,8 @@ import { DisplayallticketsComponent } from './displayalltickets/displayallticket
 import { CustomInterceptor } from './custom.interceptor';
 import { HeaderComponent } from './header/header.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { GetallusersComponent } from './getallusers/getallusers.component';
+import { AddmovieComponent } from './addmovie/addmovie.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,14 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    AddmovieComponent,
+    GetallusersComponent,
     TicketComponent,
     DisplayallticketsComponent,
     HeaderComponent,
     ForgotpasswordComponent,
+    GetallusersComponent,
+    AddmovieComponent,
   ],
   imports: [
     BrowserModule,

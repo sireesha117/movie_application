@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="container">
+    
+    <table *ngIf="users.length; else noUsers">
+      <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>PetName</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.petname}}</td>
+        
+        <!-- Add more cells as needed -->
+      </tr>
+    </table>
+    <ng-template #noUsers>
+      <p>No users found.</p>
+    </ng-template>
+  </div>
+  

@@ -59,22 +59,7 @@ export class HomeComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addNewMovie() {
-    debugger;
-  
-    this.movieservice.addMovie(this.movieObj).subscribe(
-      (data) => {
-        debugger;
-        this.data = JSON.stringify(data);
-        this.moviearr.push(this.data);
-        alert('Movie Added Successfully');
-        window.location.reload();
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+
 
   showmovie(id: any) {
     this.route.navigate([`ticket/${id}`]);

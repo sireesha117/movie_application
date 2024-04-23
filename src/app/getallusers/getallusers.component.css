@@ -1,0 +1,54 @@
+/* .container {
+    width: 100%;
+    margin: auto;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f8f8f8;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #f8f8f8;
+  }
+   */
+
+
+
+
+   .container {
+    width: 100%;
+    margin: auto;
+    /* Add space around the table */
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse; /* Collapse borders */
+    box-shadow: 0 0 20px rgba(0,0,0,0.15); /* Add a box shadow */
+    border: 1px solid #ddd; /* Add a border to the table */
+  }
+  
+  th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #ddd; /* Add a border to the bottom of the header cells */
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #f8f8f8;
+    border-top: 1px solid #ddd; /* Add a border to the top of the data cells */
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;} /* Add a background color to every even row */
+  

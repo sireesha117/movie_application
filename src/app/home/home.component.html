@@ -1,51 +1,7 @@
 <app-header></app-header>
 <mat-divider></mat-divider>
 
-<div *ngIf="isAdmin">
-  <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Add Movie </mat-panel-title>
-      </mat-expansion-panel-header>
-      <mat-form-field>
-        <mat-label>Movie Id</mat-label>
-        <input matInput placeholder="Movie Id" name="movieId" [(ngModel)]="movieObj.movieId" required />
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Movie Name</mat-label>
-        <input matInput placeholder="Movie Name" name="movieName" [(ngModel)]="movieObj.movieName" required />
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Theater</mat-label>
-        <input matInput placeholder="theater" name="theatreName" [(ngModel)]="movieObj.theatreName" required />
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Seats</mat-label>
-        <input matInput type="number" placeholder="seats" [(ngModel)]="movieObj.seats" required="" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Seats Avaliable</mat-label>
-        <input matInput type="number" placeholder="seats" [(ngModel)]="movieObj.seatsAvalible" required />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Show Time</mat-label>
-        <input matInput placeholder="Show Time" name="showTime" [(ngModel)]="movieObj.showTime" required />
-      </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Price</mat-label>
-        <input matInput type="number" placeholder="Price" [(ngModel)]="movieObj.price" required />
-      </mat-form-field>
-
-      <button (click)="addNewMovie()" mat-raised-button color="primary">
-        Submit
-      </button>
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>
 
 <mat-form-field>
   <mat-label>Movies</mat-label>
