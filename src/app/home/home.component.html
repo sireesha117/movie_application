@@ -10,9 +10,26 @@
 <hr />
 <br />
 
-<div class="card-container" *ngIf="dataSource">
+<!-- <div class="card-container" *ngIf="dataSource">
   <div  *ngFor="let element of filteredData">
     <div class="card">
+      <h2>Movie ID: {{element.movieId}}</h2>
+      <p (click)="showmovie(element.movieId)">{{ element.movieName }}</p>
+      <p>Seats: {{element.seats}}</p>
+      <p>Available Seats: {{element.seatsAvalible}}</p>
+      <p>Theater Name: {{element.theatreName}}</p>
+      <p>Show Time: {{element.showTime}}</p>
+      <p>Price: {{element.price}}</p>
+      <a (click)="deletemovie(element.movieId)" *ngIf="isAdmin"><button mat-raised-button class=".button"  color="primary">Delete</button></a>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card-container" *ngIf="dataSource">
+  <div *ngFor="let element of filteredData">
+    <div class="card">
+      <img [src]="'assets/' + element.movieName + '.jpg'" alt="{{element.movieName}}"> <!-- Add this line -->
       <h2>Movie ID: {{element.movieId}}</h2>
       <p (click)="showmovie(element.movieId)">{{ element.movieName }}</p>
       <p>Seats: {{element.seats}}</p>

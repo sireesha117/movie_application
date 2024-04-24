@@ -24,10 +24,16 @@ table {
   border-radius: 10px;
  
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: black;
+  color: white;
   margin: 10px;
   margin-right: 10px;
   padding: 20px;
   width: 300px;
+}
+img{
+  width: 300px;
+  height: 200px;
 }
 
 input {
@@ -56,4 +62,7 @@ input {
 
 .button:disabled, .button.disabled {
   opacity: .65;
+}
+img{
+ 
 }
