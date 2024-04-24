@@ -82,10 +82,8 @@ export class HomeComponent implements OnInit {
   deletemovie(did: any) {
     debugger;
     this.movieservice.deleteMovie(did).subscribe((data) => {
-      let movieIndex = this.moviearr.findIndex((c) => c.movieId == did);
-      this.moviearr.splice(movieIndex, 1);
-      alert('Movie deleted Successfully');
-      window.location.reload();
     });
+    alert('Movie deleted Successfully');
+      this.viewAllMovies();
   }
 }
