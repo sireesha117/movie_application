@@ -3,10 +3,7 @@
 <div *ngIf="isAdmin">
     <mat-accordion>
         <br>
-      <!-- <mat-expansion-panel hideToggle> -->
-        <!-- <mat-expansion-panel-header>
-          <mat-panel-title> Add Movie </mat-panel-title>
-        </mat-expansion-panel-header> -->
+      
         <mat-form-field>
           <mat-label>Movie Id</mat-label>
           <input matInput placeholder="Movie Id" name="movieId" [(ngModel)]="movieObj.movieId" required />
@@ -43,6 +40,6 @@
         <button (click)="addNewMovie()" mat-raised-button color="primary">
           Submit
         </button>
-      <!-- </mat-expansion-panel> -->
+    
     </mat-accordion>
   </div>

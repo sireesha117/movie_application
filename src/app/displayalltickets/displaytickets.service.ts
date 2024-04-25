@@ -18,7 +18,7 @@ export class DisplayticketsService {
   private apiget: String = `http://localhost:8080/api/v1/ticket/findticket`;
 
 getallmovietickets(username: string): Observable<Array<displayticket>> {
-    let url = `${this.apiget}/${username}`; // Append the username to the URL as a path variable
+    let url = `${this.apiget}/${username}`; 
     return this.http.get<Array<displayticket>>(url);
 }
 
