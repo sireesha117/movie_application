@@ -7,3 +7,8 @@
 .toolbar-button {
   margin-right: 10px;
 }
+.black-toolbar {
+  background-color: black;
+  color: white; 
+}
+

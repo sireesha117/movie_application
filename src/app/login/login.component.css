@@ -11,7 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('https://i.pinimg.com/originals/f1/ee/8b/f1ee8bf3340f69436f94cf61e4d3acb5.jpg');
+  background-size: contain;
 }
+
 .desktopViewBoardHeading{
   font-family: "Roboto";
   font-size: 50px;
@@ -26,14 +29,26 @@
   }
 }
 .loginContainerMain{
-  background-color: #F5F5F5;
-  width: 65vw;
+  width: 100%;
+  background-size: contain;
   height:100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/originals/f1/ee/8b/f1ee8bf3340f69436f94cf61e4d3acb5.jpg');
+  background-size: contain;
+  
 }
+
+.signInContainer {
+  z-index: 1;
+}
+
+/* .loginContainerMain{
+
+} */
+
 @media screen and (max-width:991px) {
   .loginContainerMain{
       width: 100vw;
@@ -65,6 +80,10 @@
   align-items: center;
   margin-top: 10px;
 }
+.alert {
+  color: red;
+  margin-top: 5px;
+}
 .loginContainer{
   width: 180px;
   height: 30px;
@@ -85,14 +104,18 @@
 }
 .loginFormContainer{
   background-color: #ffffff;
+  /* opacity: 1; */
   border-radius: 20px;
   width: 385px;
   height: 317px;
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 150px;
   margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0px 1px 1px 1px black;
 }
 @media screen and (max-width:400px){
   .loginContainer{

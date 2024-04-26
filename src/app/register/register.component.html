@@ -1,36 +1,53 @@
+
 <div class="container">
-  <div class="desktopViewBoard">
+  <!-- <div class="desktopViewBoard">
     <h1 class="desktopViewBoardHeading">Movie<br><br>Booking</h1>
-  </div>
+  </div> -->
   <div class="loginContainerMain">
     <div class="signInContainer">
-      <h1 class="signInHeading">Register</h1>
-      <p class="signInPara">Create your account</p>
+     
     
-      <form class="loginFormContainer" >
+      <form class="loginFormContainer" #registerForm="ngForm" (ngSubmit)="register()">
         <div style="margin: auto; width: 85%;">
+          <h1 class="signInHeading">Create your account</h1>
           <div class="inputFormContainer">
             <label class="loginFormName" for="username">Username</label>
-            <input type="text" [(ngModel)]="registerObj.username" id="username" name="username" class="loginFormInput" required/>
+            <input type="text" [(ngModel)]="registerObj.username" id="username" name="username" class="loginFormInput" required #username="ngModel"/>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+              Username is required.
+            </div>
           </div>
           <div class="inputFormContainer">
             <label class="loginFormName" for="password">Password</label>
-            <input type="password" [(ngModel)]="registerObj.password" id="password" name="password" class="loginFormInput" required/>
+            <input type="password" [(ngModel)]="registerObj.password" id="password" name="password" class="loginFormInput" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #password="ngModel"/>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+             Required at least 8 characters,including uppercase,lowercase,and a number.
+            </div>
           </div>
           <div class="inputFormContainer">
             <label class="loginFormName" for="email">Email</label>
-            <input type="text" [(ngModel)]="registerObj.email" id="email" name="email" class="loginFormInput" required/>
+            <input type="email" [(ngModel)]="registerObj.email" id="email" name="email" class="loginFormInput" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel"/>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+              A valid email is required.
+            </div>
           </div>
           <div class="inputFormContainer">
             <label class="loginFormName" for="petname">Pet Name</label>
-            <input type="text" [(ngModel)]="registerObj.petname" id="petname" name="petname" class="loginFormInput" required/>
+            <input type="text" [(ngModel)]="registerObj.petname" id="petname" name="petname" class="loginFormInput" required #petname="ngModel"/>
+            <div *ngIf="petname.invalid && (petname.dirty || petname.touched)" class="alert">
+              Pet name is required.
+            </div>
+
           </div>
+          <br>
           
-          <button type="submit" class="signInBtn" (click)="register()">Register</button>
+          <button type="submit" class="signInBtn" [disabled]="registerForm.invalid">Register</button>
         </div>
+        <p class="accountDesription">Already have an account? <span style="color:#346BD4;" (click)="blogin()">Back to Login</span></p>
       </form> 
-      <br><br><br>
-      <p class="accountDesription">Already have an account? <span style="color:#346BD4;" (click)="blogin()">Back to Login</span></p>
+      <br><br>
+     
     </div>
   </div>
 </div>
+

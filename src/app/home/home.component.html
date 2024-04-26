@@ -22,6 +22,7 @@
       <p>Show Time: {{element.showTime}}</p>
       <p>Price: ₹ {{element.price}}</p>
       <a (click)="deletemovie(element.movieId)" *ngIf="isAdmin"><button mat-raised-button class=".button"  color="primary">Delete</button></a>
+      <button *ngIf="!isAdmin" (click)="showmovie(element.movieId)" mat-raised-button class=".button"  color="primary">Book Ticket</button>
     </div>
   </div>
 </div>

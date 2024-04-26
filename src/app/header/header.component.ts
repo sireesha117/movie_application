@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   isAdmin: boolean | any;
+  isAuthenticated: boolean | any
+
   constructor(private route: Router) {}
   ngOnInit(): void {
     const role = localStorage.getItem('role');
@@ -16,6 +18,13 @@ export class HeaderComponent {
     } else if (role === 'customer') {
       this.isAdmin = false;
     }
+
+    // const token = localStorage.getItem('Token')
+    // if(token) {
+    //   this.isAuthenticated = true
+    // } else {
+    //   this.isAuthenticated = false
+    // }
   }
   logout() {
     localStorage.clear();

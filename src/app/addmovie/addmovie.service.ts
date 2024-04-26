@@ -14,4 +14,6 @@ export class AddMovieService {
   addMovie(movie: movie): Observable<movie> {
     return this.http.post<movie>(this.apiPost, movie);
   }
+
+  
 }

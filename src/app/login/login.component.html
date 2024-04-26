@@ -1,26 +1,31 @@
 <div class="container">
-  <div class="desktopViewBoard">
-    <h1 class="desktopViewBoardHeading">Movie<br><br>Booking</h1>
-  </div>
+  <!-- <div class="desktopViewBoard">
+
+  </div> -->
   <div class="loginContainerMain">
     <div class="signInContainer">
-      <h1 class="signInHeading">Sign In</h1>
-      <p class="signInPara">Sign in to your account</p>
     
       <form class="loginFormContainer" >
         <div style="margin: auto; width: 85%;">
           <div class="inputFormContainer">
+            <h1 class="signInHeading">Sign in to your account</h1>
             <label class="loginFormName" for="username">Username</label>
-            <input type="text" [(ngModel)]="loginObj.username" id="username" name="username" class="loginFormInput"/>
+            <input type="text" [(ngModel)]="loginObj.username" id="username" name="username" class="loginFormInput" required #username="ngModel"/>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+              Username is required.
+            </div>
           </div>
           <div class="inputFormContainer">
             <label class="loginFormName" for="password">Password</label>
-            <input type="password" [(ngModel)]="loginObj.password" id="password" name="password" class="loginFormInput"/>
+            <input type="password" [(ngModel)]="loginObj.password" id="password" name="password" class="loginFormInput" required #password="ngModel"/>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+              Password is required.
+            </div>
           
           </div>
           <div class="inputFormContainer">
             <label class="loginFormName" for="userRole">Select Role</label>
-            <select [(ngModel)]="loginObj.userRole" id="userRole" name="userRole" class="loginFormInput">
+            <select [(ngModel)]="loginObj.userRole" id="userRole" name="userRole" class="loginFormInput" required>
               <option value="admin">Admin</option>
               <option value="customer">Customer</option>
             </select>
@@ -28,10 +33,9 @@
           
           <p class="forgotPassword" (click)="forgotpassword()">Forgot password?</p>
           <button type="submit" class="signInBtn" (click)="login()">Sign In</button>
-         
+          <p class="accountDesription">Don't have an account? <span style="color:#346BD4;" (click)="Register()">Register here</span></p>
         </div>
       </form> 
-      <p class="accountDesription">Don't have an account? <span style="color:#346BD4;" (click)="Register()">Register here</span></p>
     </div>
   </div>
 </div>

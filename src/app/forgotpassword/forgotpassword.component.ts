@@ -15,6 +15,7 @@ export class ForgotpasswordComponent {
   forgotpassword() {
     this.fp.forgotpassword(this.userObj).subscribe(
       (data) => {
+        alert("Password Updated Sucessfully")
         this.route.navigate(['login']);
       },
       (error) => {
