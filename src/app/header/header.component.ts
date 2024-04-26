@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   isAdmin: boolean | any;
-  isAuthenticated: boolean | any
+  isCustomer: boolean | any
 
   constructor(private route: Router) {}
   ngOnInit(): void {
@@ -16,15 +16,10 @@ export class HeaderComponent {
     if (role === 'admin') {
       this.isAdmin = true;
     } else if (role === 'customer') {
-      this.isAdmin = false;
+      this.isAdmin = true;
     }
 
-    // const token = localStorage.getItem('Token')
-    // if(token) {
-    //   this.isAuthenticated = true
-    // } else {
-    //   this.isAuthenticated = false
-    // }
+  
   }
   logout() {
     localStorage.clear();
