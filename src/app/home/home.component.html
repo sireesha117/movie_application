@@ -20,7 +20,7 @@
       <p>Available Seats: {{element.seatsAvalible}}</p>
       <p>Theater Name: {{element.theatreName}}</p>
       <p>Show Time: {{element.showTime}}</p>
-      <p>Price: {{element.price}}</p>
+      <p>Price: ₹ {{element.price}}</p>
       <a (click)="deletemovie(element.movieId)" *ngIf="isAdmin"><button mat-raised-button class=".button"  color="primary">Delete</button></a>
     </div>
   </div>

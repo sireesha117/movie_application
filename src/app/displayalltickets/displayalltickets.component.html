@@ -9,32 +9,32 @@
 <br />
 <table mat-table [dataSource]="isAdmin ? dataSourceadmin : dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="transactionId">
-    <th mat-header-cell *matHeaderCellDef>transactionId</th>
+    <th mat-header-cell *matHeaderCellDef>TransactionId</th>
     <td mat-cell *matCellDef="let element">
       {{ element.transactionId }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="movie_id_fk">
-    <th mat-header-cell *matHeaderCellDef>movie_id_fk</th>
+    <th mat-header-cell *matHeaderCellDef>Movie Id</th>
     <td mat-cell *matCellDef="let element">
       <a>{{ element.movie_id_fk }}</a>
     </td>
   </ng-container>
   <ng-container matColumnDef="user_name_fk">
-    <th mat-header-cell *matHeaderCellDef>user_name_fk</th>
+    <th mat-header-cell *matHeaderCellDef>User Name</th>
     <td mat-cell *matCellDef="let element">
       <a>{{ element.user_name_fk }}</a>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="no_of_tickets">
-    <th mat-header-cell *matHeaderCellDef>no_of_tickets</th>
+    <th mat-header-cell *matHeaderCellDef>No Of Tickets</th>
     <td mat-cell *matCellDef="let element">{{ element.no_of_tickets }}</td>
   </ng-container>
 
   <ng-container matColumnDef="issueAt">
-    <th mat-header-cell *matHeaderCellDef>issueAt</th>
+    <th mat-header-cell *matHeaderCellDef>Issue At</th>
     <td mat-cell *matCellDef="let element">{{ element.issueAt }}</td>
   </ng-container>
   <ng-container matColumnDef="showTime">
@@ -44,7 +44,7 @@
   
   <ng-container matColumnDef="totalPrice">
     <th mat-header-cell *matHeaderCellDef>Total Price</th>
-    <td mat-cell *matCellDef="let element">{{ element.totalPrice }}</td>
+    <td mat-cell *matCellDef="let element">₹ {{ element.totalPrice }}</td>
   </ng-container>
 
   <ng-container matColumnDef="symbol">
