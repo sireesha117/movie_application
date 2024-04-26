@@ -25,6 +25,7 @@ export class LoginComponent {
         this.route.navigate([`home`]);
       }
       localStorage.setItem('role', data.userRole);
+      
     });
     (error: any) => {
       alert('Invalid Crendentials');
