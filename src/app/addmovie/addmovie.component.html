@@ -1,9 +1,7 @@
-
-
+<app-header></app-header>
 <div *ngIf="isAdmin">
     <mat-accordion>
         <br>
-      
         <mat-form-field>
           <mat-label>Movie Id</mat-label>
           <input matInput placeholder="Movie Id" name="movieId" [(ngModel)]="movieObj.movieId" required />

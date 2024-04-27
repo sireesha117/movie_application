@@ -19,20 +19,12 @@ export class HeaderComponent implements OnInit {
   constructor(private route: Router, public loginService:LoginJService) {}
 
   ngOnInit(): void {
-    const role=localStorage.getItem("role");
-      if (role === 'admin') {
-        this.isAdmin = true;
-        this.isCustomer = false;
-        this.isGuest = false;
-      } else if (role === 'customer') {
-        this.isCustomer = true;
-        this.isAdmin = false;
-        this.isGuest = false;
-      } else {
-        this.isGuest = true;
-        this.isAdmin = false;
-        this.isCustomer = false;
-      }
+    const role = localStorage.getItem('role');
+    if (role === 'admin') {
+      this.isAdmin = true;
+    } else if (role === 'customer') {
+      this.isAdmin = false;
+    }
    
 
    

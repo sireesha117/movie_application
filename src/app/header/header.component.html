@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="header-main">
+<!-- <mat-toolbar color="primary" class="header-main">
   <span routerLink="/home">Movie Application</span>
   <span class="example-spacer"></span>
   <button mat-raised-button *ngIf="isAdmin" class="toolbar-button" (click)="addMovie()">Add Movie</button>
@@ -7,5 +7,15 @@
   <button mat-raised-button *ngIf="isAdmin || isCustomer" class="toolbar-button" (click)="logout()">Logout</button>
   <button mat-raised-button *ngIf="isGuest" class="toolbar-button" (click)="login()">Login</button>
   <button mat-raised-button *ngIf="isGuest" class="toolbar-button" (click)="register()">Register</button>
+</mat-toolbar> -->
+
+
+<mat-toolbar color="primary">
+  <span routerLink="/home">Movie Application</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button *ngIf="isAdmin" class="toolbar-button" (click)="addMovie()">Add Movie</button>
+  <button mat-raised-button  class="toolbar-button" (click)="displayTicket()">DisplayTickets</button>
+  <button mat-raised-button *ngIf="isAdmin" class="toolbar-button" (click)="getAllUsers()">All Users</button>
+  <button mat-raised-button class="toolbar-button" (click)="logout()">Logout</button>
 </mat-toolbar>
 
