@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginJService } from '../login-j.service';
+import { RoleService } from '../role.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +15,7 @@ export class LoginComponent {
     userRole: '',
   };
   isAdmin: boolean = false;
-  constructor(private route: Router, private loginservice: LoginJService) {}
+  constructor(private route: Router, private loginservice: LoginJService,private roleService: RoleService) {}
   login() {
     this.loginservice.generateToken(this.loginObj).subscribe((data) => {
       if (data.Token == null || data.Token == undefined) {
@@ -25,6 +27,7 @@ export class LoginComponent {
         this.route.navigate([`home`]);
       }
       localStorage.setItem('role', data.userRole);
+      this.roleService.changeRole(data.userRole);
       
     });
     (error: any) => {
