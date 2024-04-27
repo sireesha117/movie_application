@@ -28,6 +28,8 @@ import { HeaderComponent } from './header/header.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { GetallusersComponent } from './getallusers/getallusers.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import { AppbarComponent } from './appbar/appbar.component';
+
  
 @NgModule({
   declarations: [
@@ -37,12 +39,13 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
     HomeComponent,
     AddmovieComponent,
     GetallusersComponent,
-    TicketComponent,
+    TicketComponent, 
     DisplayallticketsComponent,
     HeaderComponent,
     ForgotpasswordComponent,
     GetallusersComponent,
     AddmovieComponent,
+    AppbarComponent,
   ],
   imports: [
     BrowserModule,

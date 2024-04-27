@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .toolbar-button {
+    margin-right: 10px;
+  }
+  .black-toolbar {
+    background-color: black;
+    color: white; 
+  }

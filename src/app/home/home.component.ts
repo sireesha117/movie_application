@@ -44,31 +44,53 @@ export class HomeComponent implements OnInit {
     'price',
     'delete',
   ];
+  // viewAllMovies() {
+  //   this.movieservice.getAllMovies().subscribe(
+  //     (data) => {
+  //       this.moviearr = Object.values(data);
+  //       this.dataSource = new MatTableDataSource(this.moviearr);
+       
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
   viewAllMovies() {
     this.movieservice.getAllMovies().subscribe(
       (data) => {
         this.moviearr = Object.values(data);
-        this.dataSource = new MatTableDataSource(this.moviearr);
+        this.dataSource = this.moviearr; // Assign data directly to dataSource
       },
       (error) => {
         console.log(error);
       }
     );
   }
+  
  
 
   applyFilter(event: Event) {
     this.filterValue = (event.target as HTMLInputElement).value;
   }
 
+  // get filteredData() {
+  //   if (this.dataSource) {
+  //     return this.dataSource.data.filter((element: any) =>
+  //       element.movieName.toLowerCase().includes(this.filterValue.toLowerCase())
+  //     );
+  //   }
+  //   return [];
+  // }
   get filteredData() {
     if (this.dataSource) {
-      return this.dataSource.data.filter((element: any) =>
+      return this.dataSource.filter((element: any) =>
         element.movieName.toLowerCase().includes(this.filterValue.toLowerCase())
       );
     }
     return [];
   }
+  
 
 
 
@@ -77,7 +99,7 @@ export class HomeComponent implements OnInit {
   }
   did: number | any;
   deletemovie(did: any) {
-    debugger;
+   
     this.movieservice.deleteMovie(did).subscribe((data) => {
     });
     alert('Movie deleted Successfully');
