@@ -23,4 +23,7 @@ export class ForgotpasswordComponent {
       }
     );
   }
+  blogin() {
+    this.route.navigate(['login']);
+  }
 }
