@@ -9,17 +9,18 @@ import { guardGuard } from './guard.guard';
 import { GetallusersComponent } from './getallusers/getallusers.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { DisplayallticketsComponent } from './displayalltickets/displayalltickets.component';
+import { PreventLoginGuard } from './prevent-login.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,canActivate: [PreventLoginGuard]},
   { path: 'allusers', component: GetallusersComponent },
   { path: 'addmovie', component: AddmovieComponent },
   { path: 'displayalltickets', component: DisplayallticketsComponent },
   { path: 'home', component: HomeComponent, canActivate: [guardGuard] },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent,canActivate: [PreventLoginGuard] },
   { path: 'ticket/:id', component: TicketComponent, canActivate: [guardGuard] },
-  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent ,canActivate: [PreventLoginGuard]},
 ];
 
 @NgModule({
