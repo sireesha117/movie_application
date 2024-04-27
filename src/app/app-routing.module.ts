@@ -17,8 +17,6 @@ const routes: Routes = [
   { path: 'addmovie', component: AddmovieComponent },
   { path: 'displayalltickets', component: DisplayallticketsComponent },
   { path: 'home', component: HomeComponent, canActivate: [guardGuard] },
-
-
   { path: 'register', component: RegisterComponent },
   { path: 'ticket/:id', component: TicketComponent, canActivate: [guardGuard] },
   { path: 'forgotpassword', component: ForgotpasswordComponent },

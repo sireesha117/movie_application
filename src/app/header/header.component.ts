@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   isAdmin: boolean | any;
   isCustomer: boolean | any;
   isGuest: boolean | any;
-  // private logoutSubscription!: Subscription;
+  
 
 
   constructor(private route: Router, public loginService:LoginJService, private roleService: RoleService) {}

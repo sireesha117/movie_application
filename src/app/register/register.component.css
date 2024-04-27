@@ -99,13 +99,13 @@
   width: 385px;
   padding-left: 40px;
   padding-right: 50px;
-  /* height: 317px; */
+  
   height: auto;
-  /* max-height: 317px; */
+ 
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  /* padding-bottom: 190px; */
+ 
   margin-top: 20px;
   overflow: hidden;
 }
@@ -175,7 +175,7 @@
   color: red;
   margin-top: 1px;
   font-size: 11px;
-  /* display: none; */
+ 
 }
 
 

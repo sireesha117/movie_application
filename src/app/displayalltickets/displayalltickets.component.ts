@@ -56,10 +56,10 @@ export class DisplayallticketsComponent {
   displayticketarr: Array<displayticket> = [];
   public dataSource: [] | any;
   getAllMovieTickets() {
-    let username = localStorage.getItem('username'); // Get username from local storage
+    let username = localStorage.getItem('username'); 
 
-    if (username) { // Check if username is not null
-        this.displayticket.getallmovietickets(username).subscribe( // Send username as path variable
+    if (username) { 
+        this.displayticket.getallmovietickets(username).subscribe( 
             (data) => {
                 this.displayticketarr = Object.values(data);
                 this.dataSource = new MatTableDataSource(this.displayticketarr);
