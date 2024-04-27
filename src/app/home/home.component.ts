@@ -44,23 +44,12 @@ export class HomeComponent implements OnInit {
     'price',
     'delete',
   ];
-  // viewAllMovies() {
-  //   this.movieservice.getAllMovies().subscribe(
-  //     (data) => {
-  //       this.moviearr = Object.values(data);
-  //       this.dataSource = new MatTableDataSource(this.moviearr);
-       
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
+
   viewAllMovies() {
     this.movieservice.getAllMovies().subscribe(
       (data) => {
         this.moviearr = Object.values(data);
-        this.dataSource = this.moviearr; // Assign data directly to dataSource
+        this.dataSource = this.moviearr; 
       },
       (error) => {
         console.log(error);
@@ -68,20 +57,10 @@ export class HomeComponent implements OnInit {
     );
   }
   
- 
 
   applyFilter(event: Event) {
     this.filterValue = (event.target as HTMLInputElement).value;
   }
-
-  // get filteredData() {
-  //   if (this.dataSource) {
-  //     return this.dataSource.data.filter((element: any) =>
-  //       element.movieName.toLowerCase().includes(this.filterValue.toLowerCase())
-  //     );
-  //   }
-  //   return [];
-  // }
   get filteredData() {
     if (this.dataSource) {
       return this.dataSource.filter((element: any) =>
@@ -91,8 +70,6 @@ export class HomeComponent implements OnInit {
     return [];
   }
   
-
-
 
   showmovie(id: any) {
     this.route.navigate([`ticket/${id}`]);
