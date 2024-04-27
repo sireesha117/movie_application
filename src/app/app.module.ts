@@ -29,6 +29,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { GetallusersComponent } from './getallusers/getallusers.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { AppbarComponent } from './appbar/appbar.component';
+import { BannerComponent } from './banner/banner.component';
 
  
 @NgModule({
@@ -46,6 +47,7 @@ import { AppbarComponent } from './appbar/appbar.component';
     GetallusersComponent,
     AddmovieComponent,
     AppbarComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,

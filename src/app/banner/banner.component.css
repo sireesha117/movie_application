@@ -1,0 +1,31 @@
+.container{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%), url('https://assets.aboutamazon.com/dims4/default/16a8439/2147483647/strip/true/crop/1066x600+67+0/resize/1320x743!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F6e%2F65%2F8beecded4f798e2d6d77c650b27b%2Frday-movie-poster.jpg');
+    background-size: contain;
+    padding-top: 250px;
+    justify-content: flex-end;
+    padding-bottom: 290px;
+    padding-left: 800px;
+}
+.con-txt{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+   
+}
+button{
+    background-color: rgb(0, 0, 102);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.btn-con{
+    padding-top: 30px;
+    padding-left: 40px;
+}

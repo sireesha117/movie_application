@@ -16,4 +16,7 @@ export class AppbarComponent {
   register() {
     this.router.navigate(['register']);
   }
+  banner() {
+    this.router.navigate(['banner']);
+  }
 }

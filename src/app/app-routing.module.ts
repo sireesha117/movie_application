@@ -10,12 +10,15 @@ import { GetallusersComponent } from './getallusers/getallusers.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { DisplayallticketsComponent } from './displayalltickets/displayalltickets.component';
 import { PreventLoginGuard } from './prevent-login.guard';
+import { HeaderComponent } from './header/header.component';
+import { BannerComponent } from './banner/banner.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: BannerComponent },
   { path: 'login', component: LoginComponent ,canActivate: [PreventLoginGuard]},
   { path: 'allusers', component: GetallusersComponent },
   { path: 'addmovie', component: AddmovieComponent },
+  { path: 'banner', component: BannerComponent ,canActivate: [PreventLoginGuard]},
   { path: 'displayalltickets', component: DisplayallticketsComponent },
   { path: 'home', component: HomeComponent, canActivate: [guardGuard] },
   { path: 'register', component: RegisterComponent,canActivate: [PreventLoginGuard] },
