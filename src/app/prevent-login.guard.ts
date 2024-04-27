@@ -9,7 +9,8 @@ export class PreventLoginGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    if (localStorage.getItem('Token')) { 
+    if (localStorage.getItem('Token')) {
+     
       this.router.navigate(['/home']);
       return false;
     }
