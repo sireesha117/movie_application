@@ -25,6 +25,7 @@ export class AddmovieComponent {
   }
 
   addNewMovie() {
+    this.movieObj.showTime = this.convertTimeFormat(this.movieObj.showTime);
     this.AddMovieService.addMovie(this.movieObj).subscribe(
       (data) => {
         this.data = JSON.stringify(data);
@@ -36,5 +37,9 @@ export class AddmovieComponent {
         console.log(error);
       }
     );
+  }
+  convertTimeFormat(time: string): string {
+    const [hour, minute] = time.split(':');
+    return ((+hour > 12) ? +hour - 12 : +hour) + ':' + minute + ((+hour >= 12) ? ' PM' : ' AM');
   }
 }

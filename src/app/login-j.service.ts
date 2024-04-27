@@ -15,34 +15,34 @@ export class LoginJService {
 
   apiget: string = `http://localhost:8080/auth/v1/login`;
 
-  // public generateToken(request: any): Observable<any> {
-  //   return this.http.post(
-  //     this.apiget,   
-  //     request
-  //   );
-  // }
-
   public generateToken(request: any): Observable<any> {
-    return this.http.post(this.apiget, request).pipe(
-      tap((response: any) => {
-       if(response.Message="User successfully logged in"){
-        this.userRole=response.userRole;
-        this.isAuthanticated=true;
-       }
-        
-      
-      })
+    return this.http.post(
+      this.apiget,   
+      request
     );
   }
-  isLoggedIn():boolean{
-    return this.isAuthanticated;
-  }
+
+  // public generateToken(request: any): Observable<any> {
+  //   return this.http.post(this.apiget, request).pipe(
+  //     tap((response: any) => {
+  //      if(response.Message="User successfully logged in"){
+  //       this.userRole=response.userRole;
+  //       this.isAuthanticated=true;
+  //      }
+        
+      
+  //     })
+  //   );
+  // }
+  // isLoggedIn():boolean{
+  //   return this.isAuthanticated;
+  // }
   
-  isAdmin():boolean{
-    return this.userRole=="admin" && this.isLoggedIn();
-  }  
-  isCustomer():boolean{
-    return this.userRole=="customer"  && this.isLoggedIn();
-  }
+  // isAdmin():boolean{
+  //   return this.userRole=="admin" && this.isLoggedIn();
+  // }  
+  // isCustomer():boolean{
+  //   return this.userRole=="customer"  && this.isLoggedIn();
+  // }
     
 }

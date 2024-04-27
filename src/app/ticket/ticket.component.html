@@ -26,6 +26,16 @@
     </mat-form-field>
     <br />
     <mat-form-field>
+      <mat-label>Show Time</mat-label>
+      <input
+        matInput
+        placeholder="Show Time"
+        [value]="moviedata[5]"
+        disabled="true"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
       <mat-label>Seats</mat-label>
       <input matInput type="number" [(ngModel)]="seats" placeholder="seats" />
     </mat-form-field>
