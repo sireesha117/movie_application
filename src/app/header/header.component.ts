@@ -9,11 +9,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   isAdmin: boolean | any;
   isCustomer: boolean | any;
   isGuest: boolean | any;
-  private logoutSubscription!: Subscription;
+  // private logoutSubscription!: Subscription;
 
 
   constructor(private route: Router, public loginService:LoginJService, private roleService: RoleService) {}
@@ -35,15 +35,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.logoutSubscription = this.loginService.onLogout.subscribe(() => {
+     this.loginService.onLogout.subscribe(() => {
       this.roleService.changeRole('guest');
     });
-  }
-
-  ngOnDestroy(): void {
-    if (this.logoutSubscription) {
-      this.logoutSubscription.unsubscribe();
-    }
   }
 
   logout() {
