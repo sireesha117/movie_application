@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginJService } from '../login-j.service';
-import { RoleService } from '../role.service';
-import { Subscription } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-header',
@@ -16,10 +16,10 @@ export class HeaderComponent implements OnInit {
   
 
 
-  constructor(private route: Router, public loginService:LoginJService, private roleService: RoleService) {}
+  constructor(private route: Router, public loginService:LoginJService) {}
 
   ngOnInit(): void {
-    this.roleService.currentRole.subscribe(role => {
+    const role=localStorage.getItem("role");
       if (role === 'admin') {
         this.isAdmin = true;
         this.isCustomer = false;
@@ -33,16 +33,14 @@ export class HeaderComponent implements OnInit {
         this.isAdmin = false;
         this.isCustomer = false;
       }
-    });
+   
 
-     this.loginService.onLogout.subscribe(() => {
-      this.roleService.changeRole('guest');
-    });
+   
   }
 
   logout() {
     localStorage.clear();
-    this.loginService.onLogout.emit();
+    
     this.route.navigate(['login']);
   }
 

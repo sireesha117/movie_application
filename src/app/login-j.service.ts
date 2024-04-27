@@ -11,7 +11,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class LoginJService {
   constructor(private http: HttpClient) {}
-  public onLogout = new EventEmitter<void>();
+ 
   apiget: string = `http://localhost:8080/auth/v1/login`;
 
   public generateToken(request: any): Observable<any> {
