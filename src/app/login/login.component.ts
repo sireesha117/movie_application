@@ -16,24 +16,31 @@ export class LoginComponent {
   };
   isAdmin: boolean = false;
   constructor(private route: Router, private loginservice: LoginJService) {}
+ 
+ 
   login() {
-    this.loginservice.generateToken(this.loginObj).subscribe((data) => {
-      if (data.Token == null || data.Token == undefined) {
-        alert('invalid Credentails');
-      } else {
-        localStorage.setItem('Token', data['Token']);
-        localStorage.setItem('username', data['username']);
-
-        this.route.navigate([`home`]);
+    this.loginservice.generateToken(this.loginObj).subscribe(
+      (data) => { 
+        if (data.Token == null || data.Token == undefined) {
+          alert('Invalid Crendentials');
+         
+        } else {
+         
+          localStorage.setItem('Token', data['Token']);
+          localStorage.setItem('username', data['username']);
+         
+          this.route.navigate([`home`]);
+        }
+        localStorage.setItem('role', data.userRole);
+      },
+      (error: any) => { 
+        alert('Invalid Crendentials');
+       
       }
-      localStorage.setItem('role', data.userRole);
-    
-      
-    });
-    (error: any) => {
-      alert('Invalid Crendentials');
-    };
+    );
   }
+  
+  
 
   Register() {
     this.route.navigate(['register']);
