@@ -27,6 +27,12 @@
       <a>{{ element.user_name_fk }}</a>
     </td>
   </ng-container>
+  <ng-container matColumnDef="theatreName">
+    <th mat-header-cell *matHeaderCellDef>Theatre Name</th>
+    <td mat-cell *matCellDef="let element">
+      <a>{{ element.theatreName }}</a>
+    </td>
+  </ng-container>
 
   <ng-container matColumnDef="no_of_tickets">
     <th mat-header-cell *matHeaderCellDef>No Of Tickets</th>

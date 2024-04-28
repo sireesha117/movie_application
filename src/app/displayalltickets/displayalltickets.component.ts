@@ -24,6 +24,7 @@ export class DisplayallticketsComponent {
     'transactionId',
     'movie_id_fk',
     'user_name_fk',
+    'theatreName',
     'no_of_tickets',
     'issueAt',
     'showTime',
