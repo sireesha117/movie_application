@@ -34,22 +34,13 @@ export class HomeComponent implements OnInit {
   public movieObj: movie = new movie();
   moviearr: Array<movie> = [];
   public dataSource: [] | any;
-  displayedColumns: string[] = [
-    'movieId',
-    'movieName',
-    'seats',
-    'seatsAvalible',
-    'theatreName',
-    'showTime',
-    'price',
-    'delete',
-  ];
+ 
 
   viewAllMovies() {
     this.movieservice.getAllMovies().subscribe(
       (data) => {
-        this.moviearr = Object.values(data);
-        this.dataSource = this.moviearr; 
+       
+        this.dataSource=data;
       },
       (error) => {
         console.log(error);
