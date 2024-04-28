@@ -5,6 +5,8 @@
       <form class="loginFormContainer" >
         <div style="margin: auto; width: 85%;">
           <div class="inputFormContainer">
+           
+            
             <h1 class="signInHeading">Sign in to your account</h1>
             <label class="loginFormName" for="username">Username</label>
             <input type="text" [(ngModel)]="loginObj.username" id="username" name="username" class="loginFormInput" required #username="ngModel"/>
@@ -29,6 +31,9 @@
           </div>
           
           <p class="forgotPassword" (click)="forgotpassword()">Forgot password?</p>
+          <div *ngIf="errorMessage" class="alert">
+            {{ errorMessage }}
+          </div>
           <button type="submit" class="signInBtn" (click)="login()">Sign In</button>
           <p class="accountDesription">Don't have an account? <span style="color:#346BD4;" (click)="Register()">Register here</span></p>
         </div>

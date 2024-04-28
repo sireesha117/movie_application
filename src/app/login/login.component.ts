@@ -15,6 +15,7 @@ export class LoginComponent {
     userRole: '',
   };
   isAdmin: boolean = false;
+  errorMessage: string = '';
   constructor(private route: Router, private loginservice: LoginJService) {}
  
  
@@ -22,7 +23,8 @@ export class LoginComponent {
     this.loginservice.generateToken(this.loginObj).subscribe(
       (data) => { 
         if (data.Token == null || data.Token == undefined) {
-          alert('Invalid Crendentials');
+         
+          this.errorMessage = 'Invalid Credentials!';
          
         } else {
          
@@ -34,7 +36,8 @@ export class LoginComponent {
         localStorage.setItem('role', data.userRole);
       },
       (error: any) => { 
-        alert('Invalid Crendentials');
+        this.errorMessage = 'Invalid Credentials!';
+        
        
       }
     );

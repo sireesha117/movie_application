@@ -12,6 +12,7 @@ export class ForgotpasswordComponent {
   public userObj: user = new user();
   constructor(private fp: ForgotpasswordService, private route: Router) {}
   data: {} | any;
+  errorMessage: string = '';
   forgotpassword() {
     this.fp.forgotpassword(this.userObj).subscribe(
       (data) => {
@@ -19,7 +20,8 @@ export class ForgotpasswordComponent {
         this.route.navigate(['login']);
       },
       (error) => {
-        alert('Invalid Credentials');
+        this.errorMessage = 'Invalid Credentials!';
+       
       }
     );
   }
