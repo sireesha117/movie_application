@@ -28,19 +28,42 @@ export class TicketComponent implements OnInit {
       console.log(this.id);
     });
   }
+  // bookticket() {
+  //   this.ticketObj.movie_id_fk = this.id;
+  //   this.ticketObj.user_name_fk=localStorage.getItem("username");
+  // this.ticketObj.theatreName = this.moviedata[2];
+  //   this.ticketObj.no_of_tickets = this.seats;
+   
+  //   this.ticketservice.bookTicket(this.ticketObj).subscribe((data) => {
+  //     this.data = JSON.stringify(data);
+  //     this.ticketarr.push(this.data);
+  //   });
+  //   alert(`${this.seats} seats are booked`);
+  //   this.route.navigate(['home']);
+  // }
   bookticket() {
     this.ticketObj.movie_id_fk = this.id;
-    this.ticketObj.user_name_fk=localStorage.getItem("username");
-  this.ticketObj.theatreName = this.moviedata[2];
+    this.ticketObj.user_name_fk = localStorage.getItem("username");
+    this.ticketObj.theatreName = this.moviedata[2];
     this.ticketObj.no_of_tickets = this.seats;
-   
-    this.ticketservice.bookTicket(this.ticketObj).subscribe((data) => {
-      this.data = JSON.stringify(data);
-      this.ticketarr.push(this.data);
-    });
-    alert(`${this.seats} seats are booked`);
-    this.route.navigate(['home']);
+  
+    this.ticketservice.bookTicket(this.ticketObj).subscribe(
+      (data) => {
+        this.data = JSON.stringify(data);
+        this.ticketarr.push(this.data);
+        alert(`${this.seats} seats are booked`);
+        this.route.navigate(['home']);
+      },
+      (error) => {
+        if (error.status === 400) {
+          alert('Not enough seats available');
+        } else {
+          alert('Ticket cannot be booked');
+        }
+      }
+    );
   }
+  
 
   moviedata: Array<movie> = [];
   getmovie() {
